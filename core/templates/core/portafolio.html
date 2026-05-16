@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}Portafolio | Rafael Vera{% endblock %}
+{% block title %}Portafolio | {{ person.nombre }} {{ person.apellido }}{% endblock %}
 {% block header_image %}{% static 'core/img/hinaku.png' %}{% endblock %}
 {% block header_title %}Portafolio{% endblock %}
 {% block header_subtitle %}Currículo{% endblock %}

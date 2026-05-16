@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}Acerca De | Rafael Vera{% endblock %}
+{% block title %}Acerca De | {{ person.nombre }} {{ person.apellido }}{% endblock %}
 
 {% block header_image %}{% static 'core/img/bota.png' %}{% endblock %}
 {% block header_title %}Acerca de{% endblock %}
@@ -15,8 +15,9 @@
           <img class="img-fluid avatar" src="{% static 'core/img/img_1.png' %}" alt="">
         </div>
         <div class="col-lg-7 col-md-8">
-          <h2 class="section-heading">Rafael Eduardo Vera García</h2>
-          <p>No sé programar pero hago que sí lo sé. Me gusta aprender dentro de lo posible y no soy fan de nuevos retos.</p>
+          <h2 class="section-heading">{{ person.nombre }} {{ person.apellido }}</h2>
+          <p>{{ person.biografia }}</p>
+          <p><strong>Dedicación:</strong> {{ person.dedicacion }}</p>
         </div>
       </div>
     </div>

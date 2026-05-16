@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import persona
 
-# Register your models here.
+
+@admin.register(persona)
+class PersonaAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'apellido', 'correo_electronico', 'telefono')
+
+    def has_add_permission(self, request):
+        if self.model.objects.count() >= 1:
+            return False
+        return super().has_add_permission(request)

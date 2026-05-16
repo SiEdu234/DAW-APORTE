@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}Contacto | Rafael Vera{% endblock %}
+{% block title %}Contacto | {{ person.nombre }} {{ person.apellido }}{% endblock %}
 
 {% block header_image %}{% static 'core/img/botan.png' %}{% endblock %}
 {% block header_title %}Contacto{% endblock %}
@@ -11,10 +11,11 @@
    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Manejo distintas herramientas de desarrollo (mentira), me especializo en el backend y la administración de base de datos (otra mentira)</p>
+          <p>{{ person.dedicacion }}</p>
           <br>
-          <p><b>Teléfono:</b> +593 995 260 696</p>
-          <p><b>Honorarios:</b> Si me dan laburo, ni cobro.</p>
+          <p><b>Dirección:</b> {{ person.direccion }}</p>
+          <p><b>Teléfono:</b> {{ person.telefono }}</p>
+          <p><b>Correo:</b> {{ person.correo_electronico }}</p>
         </div>
       </div>
     </div>
